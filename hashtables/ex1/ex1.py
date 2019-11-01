@@ -23,11 +23,10 @@ def get_indices_of_item_weights(weights, length, limit):
         target = limit - weights[i]
 
         if hash_table_retrieve(ht, target):
-            print("target :", target)
-            print("-------->", i, ht.storage[target].value)
-            return (i, ht.storage[target].value)
-        else:
-            return None
+            print("-------->", (hash_table_retrieve(ht, target), i))
+            return (hash_table_retrieve(ht, target), i)
+        # else:
+        #     return None
 
 
     # # print("hashtable ----> : ", ht.storage)
